@@ -1,0 +1,115 @@
+body {
+    display: grid;
+    font-family: Arial, Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #222034;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background: url('bg_image.png') repeat 0 0;
+    padding: 0px;
+    margin: 0px;
+}
+
+html, body, div {
+    color: white;
+}
+
+.topnav {
+    border: 5px solid white;
+    border-radius: 5px;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 30px;
+    font-style: white;
+    font-weight: bold;
+    text-align: center;
+    background-color: #161522c7    
+}
+
+.description {
+    margin: 0 auto;
+    display: inline-block;
+    text-align: center;
+    height: 50vh;
+    width: 50vw;
+    background-color: #222034;
+    font-size: 20px;
+    font-style: bold;
+    text-align: center;
+}
+
+.description h2{
+    margin-top: 10vh;
+    background-color: #222034;
+    font-size: 27.5px;
+    font-style: bold;
+    text-align: center;
+    margin-bottom: 10vh;
+}
+
+.description p{
+    background-color: #222034;
+    font-size: 20px;
+    font-style: bold;
+    text-align: center;
+}
+
+.buttons-container {
+    text-align: center;
+    margin: 0vw 20vw 0vw 20vw;    
+    display: inline-block;
+    height: 50vh;
+    margin: 0vw 20vw 0vw 20vw;
+}
+
+.buttons-container a{
+    visibility: hidden;
+}
+
+.buttons-container button{
+    visibility: visible;
+}
+
+.buttons {
+    font-style: bold;
+    display: inline-block;
+    color:white;
+    font-size: 20px;
+    border-radius: 30px;
+    height: 10vh;
+    width: 15vw;
+}
+
+.button1{
+    font-style: bold;
+    background-color: aqua;
+    border: 2px solid white;
+    border-radius: 30px;
+    padding: 10px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 50px;
+    cursor: pointer;
+    width: 15vw;
+    height: 10vh;
+    font-size: 30px;
+}
+.button2{
+    font-style: bold;
+    background-color: orange;
+    border: 2px solid white;
+    border-radius: 30px;
+    padding: 10px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 50px;
+    cursor: pointer;
+    width: 15vw;
+    height: 10vh;
+    font-size: 30px;
+}
+
+.button1:hover{
+    background-color: rgb(2, 141, 141)
+}
+.button2:hover{
+    background-color: rgb(132, 86, 1);
+}

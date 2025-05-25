@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PATIENT REGISTRY</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='nurse.css')}}">
+</head>
+<style>
+        /* Container with fixed size */
+        .container {
+            height: 1000px; /* Fixed height */
+            border: 2px solid #000;
+            margin: 20px;
+            padding: 10px;
+            overflow-x: scroll; /* Horizontal scroll */
+            overflow-y: scroll; /* Vertical scroll */
+        }
+
+        .content {
+            width: 500px; 
+            height: 300px;
+            background-color: rgb(143, 226, 143);
+            padding: 20px;
+        }
+</style>
+<div class="container">
+    {% block content %}
+        {% for patient in patients %}
+            <div class="patient-card" >
+                
+                <h2>{{ patient.name }}</h2>
+                <p>Age: {{ patient.age }}</p>
+                <p>Sex: {{ patient.sex }}</p>
+                <p>Symptoms: {{ patient.symptoms }}</p>
+                <p>History: {{ patient.history }}</p>
+                <p>Last Meal: {{ patient.last_meal }}</p>
+                <p>Last Drink: {{ patient.last_drink }}</p>
+                <p>Patient ID: {{ patient.id }}</p>
+            </div>
+            <div class="button">
+                <a href="{{url_for('doctor', id=patient.id)}}">
+                    <button class="button button3">Send To Doctor</button>
+                </a> 
+            </div>
+            {% if not loop.last %}
+                <hr>
+            {% endif %}
+        {% endfor %}
+    {% endblock %}
+</div>
+    <body>
+</body>
+<html>

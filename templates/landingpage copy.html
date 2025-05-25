@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+  <header>
+    <h1>Patient Registration</h1>
+  </header>
+
+  <form id="registrationForm" action="{{ url_for('submit') }}" method="post">
+    <label for="Name"> Name</label>
+    <input type="text" id="Name" name="Name" required>
+<!-- 
+    <label for="middleName">Middle Name</label>
+    <input type="text" id="middleName" name="middleName"> -->
+
+    <!-- <label for="lastName">Last Name</label>
+    <input type="text" id="lastName" name="lastName" required> -->
+
+    <label for="sex">Sex</label>
+    <select id="sex" name="sex" required>
+      <option value="">Select...</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label for="age">Age</label>
+    <input type="number" id="age" name="age" min="0" required>
+
+    <label for="patientId">Patient ID</label>
+    <input type="text" id="patientId" name="patientId" readonly>
+
+    <label for="symptoms">Symptoms</label>
+    <textarea id="symptoms" name="symptoms" rows="3" required></textarea>
+
+    <label for="history">History</label>
+    <textarea id="history" name="history" rows="3"></textarea>
+
+    <label for="lastMeal">Last Meal</label>
+    <input type="text" id="lastMeal" name="lastMeal">
+
+    <label for="lastDrink">Last Drink</label>
+    <input type="text" id="lastDrink" name="lastDrink">
+
+    <button type="submit" name="submit">Submit</button>
+  
+    
+  </form>
+
+  <!-- <script>
+    // UUID generator
+    function generateUUID() {
+      return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+      );
+    }
+    // Populate patient ID on load
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('patientId').value = generateUUID();
+    });
+
+    // Handle form submission
+    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Form submitted successfully!');
+      this.reset();
+      document.getElementById('patientId').value = generateUUID();
+    });
+  </script> -->
+</body>
+</html>

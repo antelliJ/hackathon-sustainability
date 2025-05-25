@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Entry Form</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- Top navigation -->
+  <div class="topnav">
+    <h1>Patientcy</h1>
+  </div>
+
+  <!-- Form container -->
+  <div class="form-box">
+    <h2>Filled Entry Form</h2>
+    <form action="{{ url_for('submit') }}" method="post">
+
+      <!-- Name, Sex, Age, ID row -->
+      <div class="form-row">
+        <label for="name">Name: {{patient.name}}</label>
+      </div>
+      <div class="form-row">
+        <label for="sex">Sex:</label>
+        <label for="sex">{{patient.sex}}</label>
+        <label for="age">Age:</label>
+        <label for="age">{{patient.age}}</label>
+        <!-- <label for="patient_id">ID:</label>
+        <label for="patient_id">{{patient.id}}</label> -->
+
+
+    </div>
+
+      <!-- Symptoms grid -->
+      <div class="form-row">
+        <label>Symptoms:</label>
+        <div class="symptoms-grid">
+          {% for symptom in patient.symptoms %}
+            <label>{{ symptom }}</label>
+          {% endfor %}
+      </div>
+
+      <!-- History, Last Meal, Last Drink -->
+      <div class="form-row">
+        <label for="history">History:</label>
+        <input type="text" id="history" name="history" value="{{patient.history}}" readonly>
+    </div>
+      <div class="form-row">
+        <label for="last_meal">Last Meal:</label>
+        <input type="text" id="last_meal" name="last_meal" value="{{patient.last_meal}}" readonly>
+      </div>
+      <div class="form-row">
+        <label for="last_drink">Last Drink:</label>
+        <input type="text" id="last_drink" name="last_drink" value="{{patient.last_drink}}" readonly>
+      </div>
+
+      <!-- Status & Potential Problem -->
+      <div class="form-row">
+        <label for="status">Status:</label>
+        <input type="text" id="status" name="status" value="{{predict('', patient.symptoms)}}" readonly>
+      </div>
+      <div class="form-row">
+        <label for="potential_problem">Potential Problem:</label>
+        <input type="text" id="potential_problem" name="potential_problem", value="{{predict('', patient.symptoms)}}" readonly>
+      </div>
+
+      <!-- Submit button -->
+      <!-- <div class="form-row buttons-container">
+        <button type="submit" class="button">Submit</button>
+      </div> -->
+    </form>
+  </div>
+
+</body>
+</html>

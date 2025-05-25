@@ -1,0 +1,48 @@
+body {
+  font-family: Arial, Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0px;
+  background-color: #222034;
+  color:white;
+  display: fit-content;
+}
+
+header {
+    font-family: "Lucida Console", Monaco, monospace;
+    border-radius: 5px;
+    border: 5px solid white;
+    text-align: center;
+    height:15vh;
+    font-size: 20px;
+    background-color: #161522;
+    text-align: center;
+    margin-bottom: 20px;
+}
+header h1 {
+    padding-top: 10px;
+}
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}

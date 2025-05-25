@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Registry</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='nurse.css') }}">
+    <style>
+        .container {
+            height: 1000px;
+            border: 2px solid #000;
+            margin: 20px;
+            padding: 10px;
+            overflow-y: scroll;
+        }
+
+        .doctor-card {
+            height: 250px;
+            background-color: rgb(38, 54, 59);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .buttons-container {
+            margin-top: 10px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    {% block content %}
+        {% for doctor in doctors %}
+            <div class="doctor-card">
+                <h2>{{ doctor.Name }}</h2>
+                <p><strong>Profession:</strong> {{ doctor.Speciality }}</p>
+                <!-- <p><strong>Description:</strong> {{ doctor.description }}</p> -->
+                <div class="buttons-container">
+                    <form action="{{ url_for('send_doctor', id=doctor.id) }}" method="post">
+                        <button type="submit" class="button">Send</button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    {% endblock %}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PATIENT REGISTRY</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+
+<body>
+    <div class="topnav">
+        <h1 style="color: white">Patientcy</h1>
+    </div>
+
+    <div class="description">
+        <h2>Description</h2>
+        <p>                 Welcome to the Patient Registry. Here you can find information about patients, their conditions, and treatments.
+        This registry is designed to help healthcare providers access patient data efficiently and securely.</p>
+        <P>__________________________________________</P>
+        <p>To get started, please select click below if you are a returning or new patient.</p>
+        </p>
+    </div>
+
+    <div class="buttons-container">
+        <a href="{{url_for('register')}}">
+            <button class="button button1">New Patient</button>
+        </a>
+        <a href="{{url_for('register')}}">
+            <button class="button button2">Returning</button>
+        </a>    
+    </div>
+</body>
+<html>
